@@ -14,14 +14,16 @@ int main(int argc, char *argv[]) {
     int status;
 
     if (pid == 0) {
-       execvp(argv[1], arg);
-       exit(1);
+        execvp(argv[1], arg);
+        exit(1);
     } else {
         waitpid(pid, &status, 0);
         if (status == 0){
             printf("Success!\n");
+            exit(0);
        } else{
             printf("Failed, exit code = %d\n", status);
+            exit(1);
        }
     }
     return 0;
