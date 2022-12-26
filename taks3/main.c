@@ -6,6 +6,13 @@
 
 int pointer = 0;
 
+int main(int argc, char* argv[]) {
+    char* processTree = argv[1];
+    size_t treeSize = strlen(processTree);
+    executeFork(processTree, treeSize);
+    sleep(15);
+    return 0;
+}
 void executeFork(char* processTree, size_t treeSize) {
     int pid = -1;
     bool isPrevDot = false;
@@ -43,12 +50,4 @@ void executeFork(char* processTree, size_t treeSize) {
             return;
         }
     }
-}
-
-int main(int argc, char* argv[]) {
-    char* processTree = argv[1];
-    size_t treeSize = strlen(processTree);
-    executeFork(processTree, treeSize);
-    sleep(20);
-    return 0;
 }
