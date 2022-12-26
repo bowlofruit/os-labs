@@ -49,6 +49,6 @@ int main(int argc, char* argv[]) {
     char* processTree = argv[1];
     size_t treeSize = strlen(processTree);
     executeFork(processTree, treeSize);
-    sleep(40);
+    sleep(20);
     return 0;
 }
